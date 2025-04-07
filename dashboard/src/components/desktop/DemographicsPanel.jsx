@@ -37,7 +37,7 @@ const DemographicsPanel = () => {
             </div>
           ))}
 
-          <button className="text-xs text-gray-400 hover:text-white text-left mt-2">View all countries →</button>
+          <button className="text-xs text-left mt-2">View all countries →</button>
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 
 const mockMetrics = {
   Visitors: [
-    { name: "Mar 1", value: 400 },
+    { name: "Mar 1", value: 200 },
     { name: "Mar 5", value: 900 },
     { name: "Mar 10", value: 800 },
     { name: "Mar 15", value: 650 },
@@ -13,9 +13,9 @@ const mockMetrics = {
   ],
   Connections: [
     { name: "Mar 1", value: 200 },
-    { name: "Mar 5", value: 500 },
-    { name: "Mar 10", value: 300 },
-    { name: "Mar 15", value: 400 },
+    { name: "Mar 5", value: 400 },
+    { name: "Mar 10", value: 800 },
+    { name: "Mar 15", value: 1.2 },
     { name: "Mar 20", value: 700 },
     { name: "Mar 25", value: 600 },
     { name: "Mar 30", value: 900 },
@@ -24,7 +24,7 @@ const mockMetrics = {
 
 const colors = {
   Visitors: "#FFFFFF",
-  Connections: "#A855F7",
+  Connections: "#C36DEE",
 }
 
 const MetricChart = () => {
@@ -36,18 +36,24 @@ const MetricChart = () => {
   }
 
   return (
-    <div className="bg-[#0b0b0b] rounded-2xl p-6 shadow-lg">
+    <div className="bg-background border rounded-lg p-6">
       <div className="flex gap-2 mb-4">
-        <button className="bg-[#141414] text-white text-sm px-3 py-1.5 rounded-md border border-[#333]">{primaryMetric}</button>
-        <button className="bg-[#141414] text-white text-sm px-3 py-1.5 rounded-md border border-[#333]">Last 30 days</button>
-        <button className="bg-[#141414] text-white text-sm px-3 py-1.5 rounded-md border border-[#333]" onClick={handleCompare}>
-          {compareMetric ? "- Remove" : "+ Compare"}
-        </button>
+        <div className="w-108px h-24px">
+          <button className="w-40 h-14px rounded-[20px] border">{primaryMetric}</button>
+        </div>
+        <div className="w-96px h-24px">
+          <button className=" w-66 h-16 rounded-[20px] border ">Last 30 days</button>
+        </div>
+        <div className="w-56px h-24px">
+          <button className=" w-30 h-16 rounded-[20px] border border-dashed " onClick={handleCompare}>
+            {compareMetric ? "Remove" : "+ Add"}
+          </button>
+        </div>
       </div>
 
-      <div className="flex gap-6 text-white text-3xl font-semibold mb-4 mt-1">
+      <div className="flex gap-6 text-3xl font-semibold mb-4 mt-1">
         <div>{primaryMetric === "Visitors" && "13.49K"}</div>
-        {compareMetric && <div className="text-[#A855F7]">3.49K</div>}
+        {compareMetric && <div className="text">3.49K</div>}
       </div>
 
       <ResponsiveContainer width="100%" height={250}>
@@ -55,7 +61,7 @@ const MetricChart = () => {
           <CartesianGrid strokeDasharray="3 3" stroke="#333" />
           <XAxis dataKey="name" stroke="#999" />
           <YAxis stroke="#999" />
-          <Tooltip />
+          {/* <Tooltip /> */}
           <Line
             type="monotone"
             dataKey="value"

@@ -1,27 +1,36 @@
+import ProfileBadge from "./layout/ProfileBadge"
+
 const Sidebar = () => {
   return (
-    <aside className="w-64 bg-[#0d0d0d] border-r border-gray-800 flex flex-col">
-      <div className="h-[50px] border-b flex items-center space-x-2 px-3">
-        <div className="w-8 h-8 bg-white rounded-full" />
-        <span className="text-lg font-semibold">Vertxlabs, Inc</span>
+    <aside className="w-64 bg-background border-r flex flex-col h-full">
+      <div className="h-[50px] border-b flex items-center">
+        <div className="size-[50px] border-r flex items-center justify-center">
+          <img src="favicon.png" alt="Logo" className="w-8 h-8 rounded-full object-cover" />
+        </div>
+        <span className="text-lg font-bold px-4">Vertxlabs, Inc</span>
       </div>
 
-      <nav className="flex-1 space-y-2 text-sm mt-4 px-3">
-        <NavItem label="Dashboard" />
-        <NavItem label="Analytics" active />
-        <NavItem label="Connect" />
-        <NavItem label="Dealroom" />
-        <NavItem label="Profile" />
-        <NavItem label="Settings" />
-      </nav>
+      <div className="flex flex-1">
+        <div className="border-r w-[50px] flex flex-col items-center">
+          <ProfileBadge />
+        </div>
+        <nav className="flex-1 px-6 py-[18px] flex flex-col gap-[30px]">
+          <NavItem label="Dashboard" />
+          <NavItem label="Analytics" active />
+          <NavItem label="Connect" />
+          <NavItem label="Dealroom" />
+          <NavItem label="Profile" />
+          <NavItem label="Settings" />
+        </nav>
+      </div>
     </aside>
   )
 }
 
 const NavItem = ({ icon, label, active }) => (
-  <div className={`flex items-center space-x-3 px-3 py-2 rounded-md cursor-pointer ${active ? "text-white font-medium" : "text-gray-400"}`}>
+  <button className={`flex items-center font-bold ${active ? "" : "text-secondary hover:text-primary"}`}>
     {icon}
     <span>{label}</span>
-  </div>
+  </button>
 )
 export default Sidebar

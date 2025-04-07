@@ -3,23 +3,33 @@ import { ArrowRight } from "lucide-react"
 
 const InsightsCard = () => {
   return (
-    <Card className="bg-[#111111] text-white">
-      <CardContent className="p-6">
-        <h2 className="text-lg font-semibold mb-4">Insights</h2>
+    <Card>
+      <CardContent className="bg-background border rounded-lg p-6">
+        <h2 className="text-xl font-bold mb-6">Insights</h2>
 
-        <div className="mb-2">
-          <p className="text-sm text-gray-400">Founders</p>
-          <p className="text-2xl font-semibold">7.4K</p>
-          <p className="text-green-500 text-sm">+000% (000)</p>
+        <div className="flex justify-between items-end mb-6">
+          <div>
+            <p className="text-base">Founders</p>
+            <p className="text-2xl font-extrabold">7.4K</p>
+          </div>
+          <div className="text-right text-sm leading-tight">
+            <p className="text-[#01754F] text-xs  font-semibold">+000%</p>
+            <p className="text-secondary  text-xs font-semibold"> (000)</p>
+          </div>
         </div>
 
-        <div className="mb-4">
-          <p className="text-sm text-gray-400">Investors</p>
-          <p className="text-2xl font-semibold">6.09K</p>
-          <p className="text-green-500 text-sm">+000% (000)</p>
+        <div className="flex justify-between items-end mb-6">
+          <div>
+            <p className="text-base">Investors</p>
+            <p className="text-2xl font-extrabold">6.09K</p>
+          </div>
+          <div className="text-right text-sm leading-tight">
+            <p className="text-[#01754F] text-xs  font-semibold">+000%</p>
+            <p className="text-secondary  text-xs font-semibold">(000)</p>
+          </div>
         </div>
 
-        <div className="text-sm text-right text-gray-400 hover:text-white flex items-center justify-end gap-1 cursor-pointer">
+        <div className="text-primary text-sm text-right flex items-center justify-end gap-1 cursor-pointer border-t pt-8">
           View detailed insights <ArrowRight size={16} />
         </div>
       </CardContent>
