@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts"
+import { ChevronDown } from "lucide-react"
 
 const mockMetrics = {
   Visitors: [
@@ -37,23 +38,28 @@ const MetricChart = () => {
 
   return (
     <div className="bg-background border rounded-lg p-6">
-      <div className="flex gap-2 mb-4">
-        <div className="w-108px h-24px">
-          <button className="w-40 h-14px rounded-[20px] border">{primaryMetric}</button>
-        </div>
-        <div className="w-96px h-24px">
-          <button className=" w-66 h-16 rounded-[20px] border ">Last 30 days</button>
-        </div>
-        <div className="w-56px h-24px">
-          <button className=" w-30 h-16 rounded-[20px] border border-dashed " onClick={handleCompare}>
-            {compareMetric ? "Remove" : "+ Add"}
-          </button>
-        </div>
+      <div className="flex gap-3 mb-4">
+        <button className="flex items-center gap-2 text-sm font-medium px-4 py-[6px] border rounded-full">
+          {primaryMetric}
+          <ChevronDown size={14} className="text-muted-foreground" />
+        </button>
+
+        <button className="flex items-center gap-2 text-sm font-medium px-4 py-[6px] border rounded-full">
+          Last 30 days
+          <ChevronDown size={14} className="text-muted-foreground" />
+        </button>
+
+        <button onClick={handleCompare} className="flex items-center gap-2 text-sm font-medium px-4 py-[6px] border border-dashed rounded-full">
+          {compareMetric ? "Remove" : "+ Add"}
+        </button>
       </div>
 
-      <div className="flex gap-6 text-3xl font-semibold mb-4 mt-1">
-        <div>{primaryMetric === "Visitors" && "13.49K"}</div>
-        {compareMetric && <div className="text">3.49K</div>}
+      <div className="flex items-start gap-4 mb-4 mt-1">
+        <p className="text-3xl font-extrabold leading-none">13.49K</p>
+        <div className="flex flex-col text-xs leading-tight mt-1">
+          <span className="text-[#01754F] text-xs font-semibold">+469%</span>
+          <span className="text-secondary text-xs">(897)</span>
+        </div>
       </div>
 
       <ResponsiveContainer width="100%" height={250}>

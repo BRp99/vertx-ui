@@ -1,4 +1,5 @@
 import ProfileBadge from "./layout/ProfileBadge"
+import { Plus } from "lucide-react"
 
 const Sidebar = () => {
   return (
@@ -22,6 +23,14 @@ const Sidebar = () => {
           <NavItem label="Profile" />
           <NavItem label="Settings" />
         </nav>
+      </div>
+
+      <div className="h-[50px]  flex items-center">
+        <div className="size-[50px] border-t border-r flex items-center justify-center">
+          <div>
+            <Plus />
+          </div>
+        </div>
       </div>
     </aside>
   )

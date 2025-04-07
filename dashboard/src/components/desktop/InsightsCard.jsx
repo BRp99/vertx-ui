@@ -7,7 +7,7 @@ const InsightsCard = () => {
       <CardContent className="bg-background border rounded-lg p-6">
         <h2 className="text-xl font-bold mb-6">Insights</h2>
 
-        <div className="flex justify-between items-end mb-6">
+        <div className="flex gap-8 items-end mb-6">
           <div>
             <p className="text-base">Founders</p>
             <p className="text-2xl font-extrabold">7.4K</p>
@@ -18,7 +18,7 @@ const InsightsCard = () => {
           </div>
         </div>
 
-        <div className="flex justify-between items-end mb-6">
+        <div className="flex gap-8 items-end mb-6">
           <div>
             <p className="text-base">Investors</p>
             <p className="text-2xl font-extrabold">6.09K</p>

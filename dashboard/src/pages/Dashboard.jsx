@@ -16,7 +16,7 @@ const Dashboard = () => {
       <div className="px-[58px] py-[34px] bg-tertiary">
         {activeTab === "Overview" && (
           <>
-            <h1 className="text-2xl font-extrabold mb-4">Overvieww</h1>
+            <h1 className="text-2xl font-extrabold mb-4">Overview</h1>
             <div className="grid grid-cols-3 gap-4 w-612 h-273 ">
               <div className="col-span-2 flex flex-col gap-4 h-full">
                 <MetricChart />
