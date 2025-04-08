@@ -4,7 +4,6 @@ import InsightsCard from "../components/desktop/InsightsCard"
 import DemographicsCard from "../components/desktop/DemographicsCard"
 import MetricChart from "../components/desktop/MetricChart"
 import DashboardTabs from "../components/desktop/DashboardTabs"
-import DemographicsPanel from "../components/desktop/DemographicsPanel"
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState("Overview")
@@ -17,7 +16,7 @@ const Dashboard = () => {
         {activeTab === "Overview" && (
           <>
             <h1 className="text-2xl font-extrabold mb-4">Overview</h1>
-            <div className="grid grid-cols-3 gap-4 w-612 h-273 ">
+            <div className="grid grid-cols-3 gap-4 w-612 h-273">
               <div className="col-span-2 flex flex-col gap-4 h-full">
                 <MetricChart />
               </div>
@@ -28,8 +27,6 @@ const Dashboard = () => {
             <DemographicsCard />
           </>
         )}
-
-        {activeTab === "Demographics" && <DemographicsPanel />}
       </div>
     </DesktopLayout>
   )
