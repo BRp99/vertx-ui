@@ -3,7 +3,7 @@ import { ChevronDown } from "lucide-react"
 
 const options = ["Last 7 days", "Last 30 days", "Last 90 days", "This year"]
 
-const DateRangeDropdown = () => {
+const Dropdown = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [selected, setSelected] = useState("Last 30 days")
 
@@ -16,7 +16,7 @@ const DateRangeDropdown = () => {
     <div className="relative inline-block text-left">
       <div
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1 bg-[#0a0a0a] text-sm text-gray-400 px-3 py-1.5 rounded-md cursor-pointer"
+        className="flex items-center gap-1 bg-[#0a0a0a] text-xs desktop:text-sm text-gray-400 px-1 desktop:px-3 py-1.5 rounded-md cursor-pointer"
       >
         {selected}
         <ChevronDown size={16} />
@@ -34,4 +34,4 @@ const DateRangeDropdown = () => {
   )
 }
 
-export default DateRangeDropdown
+export default Dropdown

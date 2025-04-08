@@ -42,14 +42,16 @@ const colors = {
   Connections: "#C36DEE",
 }
 
-const Dropdown = ({ options, selected, onSelect }) => {
+const Dropdown = ({ triggerClassName, options, selected, onSelect }) => {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="relative w-fit">
+    <div className={`relative w-fit`}>
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center justify-between gap-2 text-sm font-medium px-4 py-[6px] border rounded-full text-white bg-[#000101] hover:bg-[#040504] transition min-w-[110px] max-w-[160px]"
+        className={`flex items-center justify-between gap-2 text-sm font-medium px-4 py-[6px] border rounded-full text-white bg-[#000101] hover:bg-[#040504] transition max-w-[160px] ${
+          triggerClassName || ""
+        }`}
       >
         {selected}
         <ChevronDown size={14} className="text-white" />
@@ -84,7 +86,7 @@ const MetricChart = () => {
   const [dateRange, setDateRange] = useState("Last 30 days")
 
   return (
-    <div className="flex-1 bg-[#000101] border rounded-lg p-6 text-white">
+    <div className="flex-1 bg-[#000101] border rounded-lg p-3 desktop:p-6 text-white">
       <div className="flex gap-3 mb-4">
         <Dropdown options={["Visitors", "Connections"]} selected={primaryMetric} onSelect={setPrimaryMetric} />
 
@@ -95,6 +97,7 @@ const MetricChart = () => {
         />
 
         <Dropdown
+          triggerClassName="border-dashed"
           options={["Connections", "Interactions", "Impressions"]}
           selected={compareMetric ? compareMetric : "+ Add"}
           onSelect={(value) => setCompareMetric(compareMetric === value ? null : value)}

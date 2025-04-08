@@ -4,12 +4,10 @@ import Header from "../components/desktop/Header"
 
 const DesktopLayout = ({ children }) => {
   return (
-    <div className="flex h-screen bg-background text-primary overflow-y-hidden">
+    <div className="flex h-screen bg-background text-primary">
       <Sidebar />
-      <div className="flex flex-col flex-1 overflow-y-auto">
-        <div className="hidden mobile:block">
-          <Header />
-        </div>
+      <div className={"flex flex-col flex-1 desktop:ml-[calc(256px-3px)]"}>
+        <Header />
         <main>{children}</main>
       </div>
     </div>

@@ -3,9 +3,9 @@ import { ArrowRight } from "lucide-react"
 
 const InsightsCard = () => {
   return (
-    <Card className="rounded-lg border w-full bg-background">
-      <CardContent className="p-6 flex flex-col justify-between">
-        <div>
+    <Card className="rounded-lg border w-full bg-background desktop:w-[274px]">
+      <CardContent className="p-6 flex flex-col justify-between ">
+        <div className="flex-1">
           <h2 className="text-xl font-bold mb-4">Insights</h2>
 
           <div className="flex desktop:flex-col gap-8 desktop:gap-4">

@@ -23,7 +23,10 @@ export default {
         tertiary: {
           DEFAULT: "#080808",
         },
-        //countrys color
+        border: {
+          DEFAULT: "#1D1D1D",
+        },
+        //country color
         india: {
           DEFAULT: "#4834d4",
         },

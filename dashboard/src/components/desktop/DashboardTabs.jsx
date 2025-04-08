@@ -2,12 +2,14 @@ import React from "react"
 
 const DashboardTabs = ({ activeTab, setActiveTab }) => {
   return (
-    <div className="flex items-center justify-between border-b h-[50px] font-semibold">
-      <div className="flex items-center h-full">
+    <div className={`flex items-center justify-between h-[50px] font-semibold border-b`}>
+      <div className="flex items-center justify-evenly desktop:justify-start h-full w-full text-xs desktop:text-base">
         <button
           onClick={() => setActiveTab("Overview")}
           className={`min-w-[120px] px-6 h-full transition-colors desktop:border-r ${
-            activeTab === "Overview" ? "text-white border-b-2 border-white" : "text-secondary hover:text-white"
+            activeTab === "Overview"
+              ? "text-white border-b-2 desktop:border-b-0 border-white desktop:border-border"
+              : "text-secondary hover:text-white"
           }`}
         >
           Overview
@@ -16,7 +18,7 @@ const DashboardTabs = ({ activeTab, setActiveTab }) => {
         <button
           onClick={() => setActiveTab("Reports")}
           className={`min-w-[120px] px-6 h-full transition-colors desktop:hidden ${
-            activeTab === "Reports" ? "text-white border-b-2 border-white" : "text-secondary hover:text-white"
+            activeTab === "Reports" ? "text-white border-b-2 desktop:border-b-0 border-white" : "text-secondary hover:text-white"
           }`}
         >
           Reports
@@ -24,15 +26,17 @@ const DashboardTabs = ({ activeTab, setActiveTab }) => {
 
         <button
           onClick={() => setActiveTab("Demographics")}
-          className={`min-w-[120px] px-6 h-full transition-colors desktop:border-r ${
-            activeTab === "Demographics" ? "text-white border-b-2 border-white" : "text-secondary hover:text-white"
+          className={`min-w-[120px] px-6 h-full transition-colors desktop:border-r  ${
+            activeTab === "Demographics"
+              ? "text-white border-b-2  desktop:border-b-0 border-white desktop:border-border"
+              : "text-secondary hover:text-white"
           }`}
         >
           Demographics
         </button>
       </div>
 
-      <button className="w-[120px] h-full desktop:border-l hidden desktop:block" onClick={() => console.log("More clicked")}>
+      <button className={`min-w-[120px] h-full hidden desktop:block desktop:border-l`} onClick={() => console.log("More clicked")}>
         More
       </button>
     </div>
