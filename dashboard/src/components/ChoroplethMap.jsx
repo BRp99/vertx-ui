@@ -32,7 +32,7 @@ const ChoroplethMap = () => {
             label: "Users by country",
             data: worldFeatures.map((feature) => ({
               feature,
-              value: Math.random(),
+              value: 0,
             })),
             outline: {
               type: "FeatureCollection",
@@ -50,13 +50,13 @@ const ChoroplethMap = () => {
             projection: "equalEarth",
           },
           color: {
-            quantize: 5,
-            interpolate: (t) => `rgba(${t * 255}, ${t * 255}, ${t * 255}, 1)`,
+            interpolate: (t) => `rgba(20,20,20, 1)`,
             axis: false,
           },
         },
         plugins: {
           legend: { display: false },
+          tooltip: { enabled: false },
         },
       },
     })
@@ -68,8 +68,28 @@ const ChoroplethMap = () => {
 
   return (
     <div className="w-full rounded-md overflow-hidden">
-      <div className="h-72">
+      <div className="h-72 relative w-fit">
         <canvas ref={chartRef} className="w-full h-full" />
+        {/* India */}
+        <div className="absolute top-[33%] left-[70%] rounded-full size-[12px] border border-india bg-india/10 flex justify-center items-center">
+          <div className="rounded-full size-[4px] bg-india"></div>
+        </div>
+        {/* UAE */}
+        <div className="absolute top-[30%] left-[63.5%] rounded-full size-[12px] border border-uae bg-uae/10 flex justify-center items-center">
+          <div className="rounded-full size-[4px] bg-uae"></div>
+        </div>
+        {/* Canada */}
+        <div className="absolute top-[8%] left-[25%] rounded-full size-[12px] border border-canada bg-canada/10 flex justify-center items-center">
+          <div className="rounded-full size-[4px] bg-canada"></div>
+        </div>
+        {/* USA */}
+        <div className="absolute top-[18%] left-[23%] rounded-full size-[12px] border border-usa bg-usa/10 flex justify-center items-center">
+          <div className="rounded-full size-[4px] bg-usa"></div>
+        </div>
+        {/* USA - Alaska*/}
+        <div className="absolute top-[5%] left-[18%] rounded-full size-[12px] border border-usa bg-usa/10 flex justify-center items-center">
+          <div className="rounded-full size-[4px] bg-usa"></div>
+        </div>
       </div>
 
       <div className="mt-4 flex items-center justify-center gap-6 px-4 py-2 border border-[#222] rounded-full w-fit mx-auto bg-black text-white text-sm">

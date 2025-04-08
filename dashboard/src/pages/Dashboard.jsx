@@ -16,13 +16,9 @@ const Dashboard = () => {
         {activeTab === "Overview" && (
           <>
             <h1 className="text-2xl font-extrabold mb-4">Overview</h1>
-            <div className="grid grid-cols-3 gap-4 w-612 h-273">
-              <div className="col-span-2 flex flex-col gap-4 h-full">
-                <MetricChart />
-              </div>
-              <div className="h-full">
-                <InsightsCard />
-              </div>
+            <div className="flex gap-4">
+              <MetricChart />
+              <InsightsCard />
             </div>
             <DemographicsCard />
           </>

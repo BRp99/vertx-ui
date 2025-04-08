@@ -84,7 +84,7 @@ const MetricChart = () => {
   const [dateRange, setDateRange] = useState("Last 30 days")
 
   return (
-    <div className="bg-[#000101] border  rounded-lg p-6 text-white">
+    <div className="flex-1 bg-[#000101] border rounded-lg p-6 text-white">
       <div className="flex gap-3 mb-4">
         <Dropdown options={["Visitors", "Connections"]} selected={primaryMetric} onSelect={setPrimaryMetric} />
 
@@ -125,33 +125,41 @@ const MetricChart = () => {
           </div>
         )}
       </div>
-
-      <ResponsiveContainer width="100%" height={260}>
-        <LineChart data={mockMetrics[primaryMetric]} margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
-          <XAxis dataKey="name" stroke="#888" fontSize={11} tickLine={false} axisLine={{ stroke: "#666" }} interval={2} />{" "}
-          <YAxis
-            stroke="#ccc"
-            fontSize={11}
-            tickLine={false}
-            axisLine={{ stroke: "#666" }}
-            ticks={[200, 400, 800, 1200, 1600, 2000]}
-            domain={[200, 2000]}
-            width={35}
-            tickFormatter={(value) => (value >= 1000 ? `${value / 1000}K` : value)}
-          />
-          <Line type="linear" dataKey="value" stroke={colors[primaryMetric]} strokeWidth={1.5} dot={false} />
-          {compareMetric && (
-            <Line
-              type="linear"
-              dataKey="value"
-              data={mockMetrics[compareMetric]}
-              stroke={colors[compareMetric] || "#8884d8"}
-              strokeWidth={1.5}
-              dot={false}
+      <div className="h-[170px]">
+        <ResponsiveContainer width="100%" height="100%">
+          <LineChart data={mockMetrics[primaryMetric]} margin={{}}>
+            <XAxis
+              dataKey="name"
+              tick={{ fontSize: 10, fontWeight: 600, fill: "#555555" }}
+              tickLine={false}
+              axisLine={{ stroke: "#1D1D1D" }}
+              interval={1}
+              padding={{ left: 20 }}
             />
-          )}
-        </LineChart>
-      </ResponsiveContainer>
+            <YAxis
+              tick={{ fontSize: 10, fontWeight: 600, fill: "#555555" }}
+              tickLine={false}
+              axisLine={false}
+              ticks={[200, 400, 800, 1200, 1600, 2000]}
+              domain={[200, 2000]}
+              width={35}
+              tickFormatter={(value) => (value >= 1000 ? `${value / 1000}K` : value)}
+            />
+
+            <Line type="linear" dataKey="value" stroke={colors[primaryMetric]} strokeWidth={1.5} dot={false} />
+            {compareMetric && (
+              <Line
+                type="linear"
+                dataKey="value"
+                data={mockMetrics[compareMetric]}
+                stroke={colors[compareMetric] || "#8884d8"}
+                strokeWidth={1.5}
+                dot={false}
+              />
+            )}
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   )
 }
