@@ -92,7 +92,7 @@ const ChoroplethMap = () => {
         </div>
       </div>
 
-      <div className="mt-4 flex items-center justify-center gap-6 px-4 py-2 border border-[#222] rounded-full w-fit mx-auto bg-black text-white text-sm">
+      <div className="mt-4 flex items-center justify-center gap-6 px-4 py-2 border border-[#222] rounded-full w-fit mx-auto bg-black text-primary text-sm">
         <div className="flex items-center gap-2">
           <span className="w-3 h-3 bg-india rounded-full" />
           <span>India</span>

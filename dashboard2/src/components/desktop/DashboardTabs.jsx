@@ -6,10 +6,10 @@ const DashboardTabs = ({ activeTab, setActiveTab }) => {
       <div className="flex items-center justify-evenly desktop:justify-start h-full w-full text-xs desktop:text-base">
         <button
           onClick={() => setActiveTab("Overview")}
-          className={`min-w-[120px] px-6 h-full transition-colors desktop:border-r ${
+          className={`desktop:min-w-[120px] desktop:px-6 text[8px] h-full transition-colors desktop:border-r ${
             activeTab === "Overview"
-              ? "text-white border-b-2 desktop:border-b-0 border-white desktop:border-border"
-              : "text-secondary hover:text-white"
+              ? "text-primary border-b-2 desktop:border-b-0 border-white desktop:border-border"
+              : "text-secondary hover:text-primary"
           }`}
         >
           Overview
@@ -17,8 +17,10 @@ const DashboardTabs = ({ activeTab, setActiveTab }) => {
 
         <button
           onClick={() => setActiveTab("Portfolio")}
-          className={`min-w-[120px] px-6 h-full transition-colors desktop:border-r ${
-            activeTab === "Portfolio" ? "text-white border-b-2 desktop:border-b-0 border-white desktop:border-border" : "text-[#555] hover:text-white"
+          className={`desktop:min-w-[120px] desktop:px-6 text[8px] h-full transition-colors desktop:border-r ${
+            activeTab === "Portfolio"
+              ? "text-primary border-b-2 desktop:border-b-0 border-white desktop:border-border"
+              : "text-[#555] hover:text-primary"
           }`}
         >
           Portfolio
@@ -26,10 +28,10 @@ const DashboardTabs = ({ activeTab, setActiveTab }) => {
 
         <button
           onClick={() => setActiveTab("Experience")}
-          className={`min-w-[120px] px-6 h-full transition-colors desktop:border-r ${
+          className={`desktop:min-w-[120px] desktop:px-6 text[8px] h-full transition-colors desktop:border-r ${
             activeTab === "Experience"
-              ? "text-white border-b-2 desktop:border-b-0 border-white desktop:border-border"
-              : "text-[#555] hover:text-white"
+              ? "text-primary border-b-2 desktop:border-b-0 border-white desktop:border-border"
+              : "text-[#555] hover:text-primary"
           }`}
         >
           Experience
@@ -37,8 +39,8 @@ const DashboardTabs = ({ activeTab, setActiveTab }) => {
 
         <button
           onClick={() => setActiveTab("Media")}
-          className={`min-w-[120px] px-6 h-full transition-colors desktop:border-r ${
-            activeTab === "Media" ? "text-white border-b-2 desktop:border-b-0 border-white desktop:border-border" : "text-[#555] hover:text-white"
+          className={`desktop:min-w-[120px] desktop:px-6 text[8px] h-full transition-colors desktop:border-r ${
+            activeTab === "Media" ? "text-primary border-b-2 desktop:border-b-0 border-white desktop:border-border" : "text-[#555] hover:text-primary"
           }`}
         >
           Media

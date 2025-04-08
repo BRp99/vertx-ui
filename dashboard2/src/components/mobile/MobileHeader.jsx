@@ -9,7 +9,7 @@ const MobileHeader = () => {
         <img src="mobileH.png" alt="Logo" className="w-8 h-8 rounded-full object-cover" />
       </div>
 
-      <button className="text-white">
+      <button className="text-primary">
         <MoreVertical size={20} />
       </button>
     </header>

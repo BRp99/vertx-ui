@@ -24,7 +24,7 @@ const Dropdown = () => {
       {isOpen && (
         <div className="absolute right-0 mt-2 w-48 bg-[#1a1a1a] border border-gray-700 rounded-md shadow-lg z-10">
           {options.map((option) => (
-            <div key={option} onClick={() => handleSelect(option)} className="px-4 py-2 text-sm text-white hover:bg-gray-700 cursor-pointer">
+            <div key={option} onClick={() => handleSelect(option)} className="px-4 py-2 text-sm text-primary hover:bg-gray-700 cursor-pointer">
               {option}
             </div>
           ))}
