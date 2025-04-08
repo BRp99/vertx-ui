@@ -26,8 +26,7 @@ const DemographicsCard = () => {
         <div className="flex flex-1 gap-6 overflow-hidden">
           <div className="w-2/3 flex flex-col justify-between">
             <ChoroplethMap />
-
-            <div className="mt-3 px-2">
+            <div className="mt-3 px-2"> 
               <div className="flex items-center gap-4 bg-[#0b0b0b] border rounded-full px-4 py-1 w-fit text-xs">
                 <div className="flex items-center gap-1">
                   <span className="w-3 h-3 rounded-full bg-india" />

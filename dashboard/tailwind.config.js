@@ -7,6 +7,9 @@ export default {
       borderColor: {
         DEFAULT: "#1D1D1D",
       },
+      screens: {
+        desktop: "1110px",
+      },
       colors: {
         background: {
           DEFAULT: "#000",

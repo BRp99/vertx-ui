@@ -3,7 +3,7 @@ import { Plus } from "lucide-react"
 
 const Sidebar = () => {
   return (
-    <aside className="w-64 bg-background border-r flex flex-col h-full">
+    <aside className="w-64 bg-background border-r desktop:flex flex-col h-full hidden ">
       <div className="h-[50px] border-b flex items-center">
         <div className="size-[50px] border-r flex items-center justify-center">
           <img src="favicon.png" alt="Logo" className="w-8 h-8 rounded-full object-cover" />

@@ -3,30 +3,32 @@ import { ArrowRight } from "lucide-react"
 
 const InsightsCard = () => {
   return (
-    <Card className="rounded-lg border w-[274px] bg-background">
+    <Card className="rounded-lg border w-full bg-background">
       <CardContent className="p-6 flex flex-col justify-between">
         <div>
-          <h2 className="text-xl font-bold mb-6">Insights</h2>
+          <h2 className="text-xl font-bold mb-4">Insights</h2>
 
-          <div className="flex gap-8 items-end mb-6">
-            <div>
-              <p className="text-base">Founders</p>
-              <p className="text-2xl font-extrabold">7.4K</p>
+          <div className="flex desktop:flex-col gap-8 desktop:gap-4">
+            <div className="flex gap-8 items-end">
+              <div>
+                <p className="text-base">Founders</p>
+                <p className="text-2xl font-extrabold">7.4K</p>
+              </div>
+              <div className="text-right text-sm leading-tight">
+                <p className="text-[#01754F] text-xs font-semibold">+000%</p>
+                <p className="text-secondary text-xs font-semibold">(000)</p>
+              </div>
             </div>
-            <div className="text-right text-sm leading-tight">
-              <p className="text-[#01754F] text-xs font-semibold">+000%</p>
-              <p className="text-secondary text-xs font-semibold">(000)</p>
-            </div>
-          </div>
 
-          <div className="flex gap-8 items-end mb-6">
-            <div>
-              <p className="text-base">Investors</p>
-              <p className="text-2xl font-extrabold">6.09K</p>
-            </div>
-            <div className="text-right text-sm leading-tight">
-              <p className="text-[#01754F] text-xs font-semibold">+000%</p>
-              <p className="text-secondary text-xs font-semibold">(000)</p>
+            <div className="flex gap-8 items-end">
+              <div>
+                <p className="text-base">Investors</p>
+                <p className="text-2xl font-extrabold">6.09K</p>
+              </div>
+              <div className="text-right text-sm leading-tight">
+                <p className="text-[#01754F] text-xs font-semibold">+000%</p>
+                <p className="text-secondary text-xs font-semibold">(000)</p>
+              </div>
             </div>
           </div>
         </div>
